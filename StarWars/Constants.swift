@@ -19,7 +19,8 @@ struct K {
     static let loginSegue = "LoginToPeople"
     static let peopleNameSegue = "PeopleToDetails"
     static let starshipDetailsSegue = "StarshipToDetails"
-    static let peopleSpeciesSegue = "PeopleToSpecies"
+//    static let peopleSpeciesSegue = "PeopleToSpecies"
+    static let peopleSpeciesSegue = "PeopleToSpeciesBetter"
     static let planetDetailsSegue = "PlanetToDetails"
     
     static let cellIdentifier = "ReusablePeopleCell"

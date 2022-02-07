@@ -28,7 +28,7 @@ class PeopleViewController: UIViewController {
         navigationItem.hidesBackButton = true
         
         tableView.dataSource = self
-        tableView.delegate = self
+//        tableView.delegate = self
         
         fetchPeople()
         
@@ -101,7 +101,8 @@ extension PeopleViewController: PeopleCellDelegate {
             destinationVC.filmsURL = findPeople?.films
             destinationVC.starshipsURL = findPeople?.starships
         } else if segue.identifier == K.peopleSpeciesSegue {
-            let destinationVC = segue.destination as! SpeciesViewController
+//            let destinationVC = segue.destination as! SpeciesViewController
+            let destinationVC = segue.destination as! SpeciesViewControllerBetter
             
             destinationVC.speciesURL = findPeople?.species
         } else if segue.identifier == K.planetDetailsSegue {
@@ -112,13 +113,13 @@ extension PeopleViewController: PeopleCellDelegate {
     }
 }
 
-extension PeopleViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
-}
+//extension PeopleViewController: UITableViewDelegate {
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//    }
+//    
+//}
 
 extension PeopleViewController {
     

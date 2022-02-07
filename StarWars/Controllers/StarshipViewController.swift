@@ -21,7 +21,7 @@ class StarshipViewController: UIViewController {
     @IBOutlet weak var item4TitleLabel: UILabel!
     @IBOutlet weak var item4Label: UILabel!
     
-    var starship: Starship?
+    var starship: StarshipModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -295,6 +295,7 @@
                         <segue destination="cqc-Fz-wbH" kind="show" identifier="PeopleToDetails" id="KcN-Em-lxd"/>
                         <segue destination="lkq-pA-svK" kind="show" identifier="PeopleToSpecies" id="wtJ-jO-XYk"/>
                         <segue destination="QMd-QU-uKe" kind="show" identifier="PlanetToDetails" id="yUd-p6-tuM"/>
+                        <segue destination="Wqz-fv-dbe" kind="show" identifier="PeopleToSpeciesBetter" id="U9j-zn-q3T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFP-qE-CyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -332,6 +333,26 @@
             </objects>
             <point key="canvasLocation" x="4142" y="-670"/>
         </scene>
+        <!--Species View Controller Better-->
+        <scene sceneID="WXn-dO-HIt">
+            <objects>
+                <tableViewController id="Wqz-fv-dbe" customClass="SpeciesViewControllerBetter" customModule="StarWars" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dJU-Cc-ckK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" name="BrandOrange"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Wqz-fv-dbe" id="lju-fw-bEG"/>
+                            <outlet property="delegate" destination="Wqz-fv-dbe" id="qCB-os-6JD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="O2j-ax-Czb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JX5-Qk-fNH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5183" y="-670"/>
+        </scene>
         <!--Films Starships View Controller-->
         <scene sceneID="Tji-wa-jc1">
             <objects>
@@ -366,7 +387,7 @@
                     <navigationItem key="navigationItem" id="Est-Qe-3Zx"/>
                     <connections>
                         <outlet property="filmsTableView" destination="skv-aU-vWf" id="92f-Jm-S94"/>
-                        <outlet property="speciesTableView" destination="HAC-FF-Z7s" id="mdK-GU-L0l"/>
+                        <outlet property="starshipsTableView" destination="HAC-FF-Z7s" id="L7p-wI-xQ1"/>
                         <segue destination="BK7-UR-4Mk" kind="show" identifier="StarshipToDetails" id="WPd-Nf-63U"/>
                     </connections>
                 </viewController>
