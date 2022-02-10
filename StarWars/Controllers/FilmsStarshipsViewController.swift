@@ -153,6 +153,7 @@ extension FilmsStarshipsViewController {
                     print("Data from DB")
                     self.starships = starships
                     self.starshipsTableView.reloadData()
+                    
                 } else {
                     print("Call API")
                     fetchStarships()
@@ -164,20 +165,27 @@ extension FilmsStarshipsViewController {
     }
     
     func fetchStarships() {
-        var starships: [StarshipModel] = []
+        let group = DispatchGroup()
+        
+        
         if let safeStarshipsURL = starshipsURL {
             for starshipURL in safeStarshipsURL {
+                group.enter()
                 StarshipModel.getPeopleStarships(starshipURL) { result in
                     switch result {
                     case .success(let starship):
                         self.starships_api?.append(starship)
-                        self.saveItems()
-                        self.loadStarships2(from_db: true)
+                        group.leave()
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
                 }
             }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            self.saveItems()
+            self.loadStarships2(from_db: true)
         }
     }
     

@@ -82,24 +82,26 @@ extension StarshipModel {
         
         switch dataResponse {
         case .success(let json):
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            let starship = StarshipModel(context: context)
-            starship.name = json[StarshipFields.Name.rawValue] as? String
-            starship.model = json[StarshipFields.Model.rawValue] as? String
-            starship.starshipClass = json[StarshipFields.StarshipClass.rawValue] as? String
-            starship.manufacturer = json[StarshipFields.Manufacturer.rawValue] as? String
-            starship.length = json[StarshipFields.Length.rawValue] as? String
-            starship.crew = json[StarshipFields.Crew.rawValue] as? String
-            starship.url = json[StarshipFields.Url.rawValue] as? String
+            let starship = init_data(json: json)
             print("Getting one starship from API...")
             return .success(starship)
         case .failure(let error):
             return .failure(error)
         }
     }
-
-}
-
-extension StarshipModel : Identifiable {
+    
+    private class func init_data(json: [String: Any]) -> StarshipModel{
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let starship = StarshipModel(context: context)
+        starship.name = json[StarshipFields.Name.rawValue] as? String
+        starship.model = json[StarshipFields.Model.rawValue] as? String
+        starship.starshipClass = json[StarshipFields.StarshipClass.rawValue] as? String
+        starship.manufacturer = json[StarshipFields.Manufacturer.rawValue] as? String
+        starship.length = json[StarshipFields.Length.rawValue] as? String
+        starship.crew = json[StarshipFields.Crew.rawValue] as? String
+        starship.url = json[StarshipFields.Url.rawValue] as? String
+        
+        return starship
+    }
 
 }

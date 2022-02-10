@@ -28,7 +28,6 @@ class PeopleViewController: UIViewController {
         navigationItem.hidesBackButton = true
         
         tableView.dataSource = self
-//        tableView.delegate = self
         
         fetchPeople()
         
@@ -112,14 +111,6 @@ extension PeopleViewController: PeopleCellDelegate {
         }
     }
 }
-
-//extension PeopleViewController: UITableViewDelegate {
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//    }
-//    
-//}
 
 extension PeopleViewController {
     

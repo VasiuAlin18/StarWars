@@ -3,7 +3,6 @@
 //  StarWars
 //
 //  Created by Take Off Labs on 29.10.2021.
-//  Copyright © 2021 Angela Yu. All rights reserved.
 //
 
 import UIKit

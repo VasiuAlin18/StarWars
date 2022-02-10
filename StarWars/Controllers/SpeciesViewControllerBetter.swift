@@ -16,6 +16,7 @@ class SpeciesViewControllerBetter: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.backgroundColor = UIColor(named: K.BrandColors.orange)
         
         title = K.speciesPageName
         
